@@ -1,2 +1,5 @@
-package com.microgrid.management.model;public enum Status {
+package com.microgrid.management.model;
+
+public enum Status {
+    OPEN, IN_PROGRESS, RESOLVED
 }

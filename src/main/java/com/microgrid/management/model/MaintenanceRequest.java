@@ -8,7 +8,7 @@ public class MaintenanceRequest {
     private Long id;
 
     private String description;
-    private String status; // OPEN, IN_PROGRESS, RESOLVED
+    private Status status; //
     private LocalDateTime requestDate;
 
     @ManyToOne
