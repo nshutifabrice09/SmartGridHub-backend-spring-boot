@@ -5,8 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 
-import java.lang.reflect.Type;
-
 @Entity
 @Table(name = "energy_assets")
 @Builder
@@ -17,6 +15,7 @@ public class EnergyAsset {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Enumerated(EnumType.STRING)
     private Type type;
     private double capacity;
     private double currentOutput;

@@ -18,7 +18,8 @@ public class MaintenanceRequest {
     private Long id;
 
     private String description;
-    private Status status; //
+    @Enumerated(EnumType.STRING)
+    private Status status;
     private LocalDateTime requestDate;
 
     @ManyToOne

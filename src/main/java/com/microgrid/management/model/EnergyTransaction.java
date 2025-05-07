@@ -17,7 +17,7 @@ public class EnergyTransaction {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private double amount; // kWh
+    private double amount;
     private double pricePerKwh;
     private LocalDateTime timestamp;
 
