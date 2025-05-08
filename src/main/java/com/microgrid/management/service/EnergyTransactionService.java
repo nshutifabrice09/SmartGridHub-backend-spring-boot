@@ -1,2 +1,9 @@
-package com.microgrid.management.service;public interface EnergyTransactionService {
+package com.microgrid.management.service;
+
+import com.microgrid.management.model.EnergyTransaction;
+
+import java.util.List;
+
+public interface EnergyTransactionService {
+    List<EnergyTransaction> getAllEnergyTransactions();
 }

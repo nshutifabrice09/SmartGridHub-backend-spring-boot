@@ -1,4 +1,4 @@
-package com.microgrid.management.controller;
+package com.microgrid.management.exception.controller;
 
 import com.microgrid.management.model.Alert;
 import com.microgrid.management.service.AlertService;
