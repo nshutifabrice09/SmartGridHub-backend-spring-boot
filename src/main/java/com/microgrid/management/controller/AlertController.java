@@ -4,10 +4,7 @@ import com.microgrid.management.model.Alert;
 import com.microgrid.management.model.User;
 import com.microgrid.management.service.AlertService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -32,5 +29,14 @@ public class AlertController {
     @PostMapping("/alert")
     public Alert saveAlert(@RequestBody Alert alert){
         return alertService.saveAlert(alert);
+    }
+    @PutMapping("/update/alert/{id}")
+    public Alert updateAlert(@PathVariable ("id") Long id, @RequestBody Alert alert){
+        return alertService.updateAlert(id, alert);
+    }
+
+    @DeleteMapping("/delete/alert/{id}")
+    public void removeAlertById(@PathVariable ("id") Long id){
+        alertService.removeAlertById(id);
     }
 }
