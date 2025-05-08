@@ -33,4 +33,14 @@ public class BillingRecordController {
         return billingRecordService.saveBillingRecord(billingRecord);
     }
 
+    @PutMapping("/update/billingRecord/{id}")
+    public BillingRecord updateBillingRecord(@PathVariable("id") Long id, @RequestBody BillingRecord billingRecord){
+        return billingRecordService.updateBillingRecord(id, billingRecord);
+    }
+
+    @DeleteMapping("/delete/billingRecord/{id}")
+    public void removeBillingRecord(@PathVariable ("id") Long id){
+        billingRecordService.removeBillingRecordById(id);
+    }
+
 }
