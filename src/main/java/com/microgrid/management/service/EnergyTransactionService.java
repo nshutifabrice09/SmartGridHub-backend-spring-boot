@@ -8,4 +8,6 @@ public interface EnergyTransactionService {
     List<EnergyTransaction> getAllEnergyTransactions();
     EnergyTransaction getEnergyTransactionById(Long id);
     EnergyTransaction saveEnergyTransaction(EnergyTransaction energyTransaction);
+    EnergyTransaction updateEnergyTransaction(Long id, EnergyTransaction energyTransaction);
+    void removeEnergyTransactionById(Long id);
 }
