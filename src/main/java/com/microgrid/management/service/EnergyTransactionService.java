@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface EnergyTransactionService {
     List<EnergyTransaction> getAllEnergyTransactions();
+    EnergyTransaction getEnergyTransactionById(Long id);
+    EnergyTransaction saveEnergyTransaction(EnergyTransaction energyTransaction);
 }
