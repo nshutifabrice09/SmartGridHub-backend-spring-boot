@@ -1,13 +1,14 @@
 package com.microgrid.management.controller;
 
 import com.microgrid.management.model.Alert;
-import com.microgrid.management.model.User;
 import com.microgrid.management.service.AlertService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RestController
+@CrossOrigin("http://localhost:3000")
 public class AlertController {
 
     private AlertService alertService;
