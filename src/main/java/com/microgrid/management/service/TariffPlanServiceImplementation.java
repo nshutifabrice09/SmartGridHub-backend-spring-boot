@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class TariffPlanServiceImplementaion implements TariffPlanService {
+public class TariffPlanServiceImplementation implements TariffPlanService {
     @Override
     public List<TariffPlan> getAllTariffPlans() {
         return null;
