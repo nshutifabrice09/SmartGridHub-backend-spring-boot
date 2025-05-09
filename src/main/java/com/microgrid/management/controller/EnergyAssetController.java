@@ -1,4 +1,4 @@
-package com.microgrid.management.exception.controller;
+package com.microgrid.management.controller;
 
 import com.microgrid.management.model.EnergyAsset;
 import com.microgrid.management.service.EnergyAssetService;
