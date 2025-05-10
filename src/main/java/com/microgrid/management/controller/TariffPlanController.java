@@ -33,4 +33,14 @@ public class TariffPlanController {
         return tariffPlanService.saveTariffPlan(tariffPlan);
     }
 
+    @PutMapping("/update/tariffPlan/{id}")
+    public TariffPlan updateTariffPlan(@PathVariable ("id") Long id, @RequestBody TariffPlan tariffPlan){
+        return tariffPlanService.updateTariffPlan(id, tariffPlan);
+    }
+
+    @DeleteMapping("/delete/tariffPlan/{id}")
+    public void removeTariffPlanById(@PathVariable ("id") Long id){
+        tariffPlanService.removeTariffPlanById(id);
+    }
+
 }
