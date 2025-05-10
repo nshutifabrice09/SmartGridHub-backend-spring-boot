@@ -3,10 +3,7 @@ package com.microgrid.management.controller;
 import com.microgrid.management.model.TariffPlan;
 import com.microgrid.management.service.TariffPlanService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,6 +26,11 @@ public class TariffPlanController {
     @GetMapping("/tariffPlan/{id}")
     public TariffPlan getTariffPlanById(@PathVariable ("id") Long id){
         return tariffPlanService.getTariffPlanById(id);
+    }
+
+    @PostMapping("/tariffPlan")
+    public TariffPlan saveTariffPlan(@RequestBody TariffPlan tariffPlan){
+        return tariffPlanService.saveTariffPlan(tariffPlan);
     }
 
 }
