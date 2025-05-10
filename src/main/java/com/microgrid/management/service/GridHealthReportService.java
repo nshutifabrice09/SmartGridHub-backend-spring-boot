@@ -9,4 +9,5 @@ public interface GridHealthReportService {
     GridHealthReport getGridHealthReportById(Long id);
     GridHealthReport saveGridHealthReport(GridHealthReport gridHealthReport);
     GridHealthReport updateGridHealthReport(Long id, GridHealthReport gridHealthReport);
+    void removeById(Long id);
 }
