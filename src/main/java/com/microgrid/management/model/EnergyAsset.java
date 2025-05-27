@@ -21,9 +21,11 @@ public class EnergyAsset {
     private double currentOutput;
 
     @ManyToOne
+    @JoinColumn(name = "microgrid_id")
     private Microgrid microgrid;
 
     @ManyToOne
+    @JoinColumn(name = "owner_id")
     private User owner;
 
     public Long getId() {
