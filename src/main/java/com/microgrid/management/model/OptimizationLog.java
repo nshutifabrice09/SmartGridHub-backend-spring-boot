@@ -9,7 +9,7 @@ import org.hibernate.annotations.NaturalId;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "energy_usage_records")
+@Table(name = "optimization_logs")
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
