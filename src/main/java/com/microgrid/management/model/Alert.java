@@ -18,10 +18,12 @@ public class Alert {
     private Long id;
 
     private String message;
-    private String type; // WARNING, ERROR, INFO
+    @Enumerated(EnumType.STRING)
+    private AlertType type;
     private LocalDateTime timestamp;
 
     @ManyToOne
+    @JoinColumn(name = "microgrid_id")
     private Microgrid microgrid;
 
     public Long getId() {
@@ -40,11 +42,11 @@ public class Alert {
         this.message = message;
     }
 
-    public String getType() {
+    public AlertType getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(AlertType type) {
         this.type = type;
     }
 
