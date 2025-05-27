@@ -22,5 +22,38 @@ public class OptimizationLog {
     private String recommendation;
     private LocalDateTime timestamp;
     @ManyToOne
+    @JoinColumn(name = "microgrid_id")
     private Microgrid microgrid;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getRecommendation() {
+        return recommendation;
+    }
+
+    public void setRecommendation(String recommendation) {
+        this.recommendation = recommendation;
+    }
+
+    public LocalDateTime getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(LocalDateTime timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public Microgrid getMicrogrid() {
+        return microgrid;
+    }
+
+    public void setMicrogrid(Microgrid microgrid) {
+        this.microgrid = microgrid;
+    }
 }
