@@ -28,10 +28,7 @@ public class TariffPlanController {
         return tariffPlanService.getTariffPlanById(id);
     }
 
-    @PostMapping("/tariffPlan")
-    public TariffPlan saveTariffPlan(@RequestBody TariffPlan tariffPlan){
-        return tariffPlanService.saveTariffPlan(tariffPlan);
-    }
+
 
     @PutMapping("/update/tariffPlan/{id}")
     public TariffPlan updateTariffPlan(@PathVariable ("id") Long id, @RequestBody TariffPlan tariffPlan){

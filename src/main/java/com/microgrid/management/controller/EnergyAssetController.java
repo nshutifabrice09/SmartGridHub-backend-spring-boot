@@ -26,10 +26,7 @@ public class EnergyAssetController {
         return energyAssetService.getEnergyAsset(id);
     }
 
-    @PostMapping("/energyAsset")
-    public EnergyAsset saveEnergyAsset (@RequestBody EnergyAsset energyAsset){
-        return energyAssetService.saveEnergyAsset(energyAsset);
-    }
+
 
     @PutMapping("/update/energyAsset/{id}")
     public EnergyAsset updateEnergyAsset(@PathVariable ("id") Long id, @RequestBody EnergyAsset energyAsset){

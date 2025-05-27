@@ -15,12 +15,7 @@ public class EnergyTransactionController {
     private final EnergyTransactionService energyTransactionService;
 
     @Autowired
-    public EnergyTransactionController (EnergyTransactionService energyTransactionService){
-        this.energyTransactionService=energyTransactionService;
-    }
-
-    @GetMapping("/energyTransactions")
-    public List<EnergyTransaction> energyTransactionList(){
-        return energyTransactionService.getAllEnergyTransactions();
+    public EnergyTransactionController(EnergyTransactionService energyTransactionService) {
+        this.energyTransactionService = energyTransactionService;
     }
 }
