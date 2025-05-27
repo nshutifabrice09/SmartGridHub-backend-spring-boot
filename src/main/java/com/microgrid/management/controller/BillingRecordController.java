@@ -28,10 +28,6 @@ public class BillingRecordController {
         return billingRecordService.getBillingRecordById(id);
     }
 
-    @PostMapping("/billingRecord")
-    public BillingRecord saveBillingRecord(@RequestBody BillingRecord billingRecord){
-        return billingRecordService.saveBillingRecord(billingRecord);
-    }
 
     @PutMapping("/update/billingRecord/{id}")
     public BillingRecord updateBillingRecord(@PathVariable("id") Long id, @RequestBody BillingRecord billingRecord){

@@ -1,2 +1,4 @@
-package com.microgrid.management.exception;public class GridHealthReportNotFoundException {
+package com.microgrid.management.exception;
+
+public class GridHealthReportNotFoundException {
 }

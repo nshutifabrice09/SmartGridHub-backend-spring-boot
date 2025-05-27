@@ -27,10 +27,6 @@ public class AlertController {
         return alertService.getAlertById(id);
     }
 
-    @PostMapping("/alert")
-    public Alert saveAlert(@RequestBody Alert alert){
-        return alertService.saveAlert(alert);
-    }
     @PutMapping("/update/alert/{id}")
     public Alert updateAlert(@PathVariable ("id") Long id, @RequestBody Alert alert){
         return alertService.updateAlert(id, alert);
