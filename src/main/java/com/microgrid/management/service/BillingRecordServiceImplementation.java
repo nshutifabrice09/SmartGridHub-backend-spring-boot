@@ -18,7 +18,7 @@ public class BillingRecordServiceImplementation implements BillingRecordService{
     }
 
     @Override
-    public BillingRecord saveBillingRecord(BillingRecord billingRecord) {
+    public BillingRecord saveBillingRecord(BillingRecord billingRecord, Long userId) {
         return null;
     }
 

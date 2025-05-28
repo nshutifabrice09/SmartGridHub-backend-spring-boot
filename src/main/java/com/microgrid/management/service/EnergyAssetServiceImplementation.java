@@ -18,7 +18,7 @@ public class EnergyAssetServiceImplementation implements EnergyAssetService{
     }
 
     @Override
-    public EnergyAsset saveEnergyAsset(EnergyAsset energyAsset) {
+    public EnergyAsset saveEnergyAsset(EnergyAsset energyAsset, Long microgridId, Long ownerId) {
         return null;
     }
 

@@ -7,7 +7,7 @@ import java.util.List;
 public interface BillingRecordService {
     List<BillingRecord> getAllBillingRecords();
     BillingRecord getBillingRecordById(Long id);
-    BillingRecord saveBillingRecord(BillingRecord billingRecord);
+    BillingRecord saveBillingRecord(BillingRecord billingRecord, Long userId);
     BillingRecord updateBillingRecord(Long id, BillingRecord billingRecord);
     void removeBillingRecordById(Long id);
 
