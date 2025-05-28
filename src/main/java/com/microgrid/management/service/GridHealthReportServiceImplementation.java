@@ -21,7 +21,7 @@ public class GridHealthReportServiceImplementation implements GridHealthReportSe
     public GridHealthReport saveGridHealthReport(GridHealthReport gridHealthReport, Long microgridId) {
         return null;
     }
-    
+
     @Override
     public GridHealthReport updateGridHealthReport(Long id, GridHealthReport gridHealthReport) {
         return null;
