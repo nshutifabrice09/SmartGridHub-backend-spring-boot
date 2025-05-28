@@ -18,9 +18,10 @@ public class AlertServiceImplementation implements AlertService{
     }
 
     @Override
-    public Alert saveAlert(Alert alert) {
+    public Alert saveAlert(Alert alert, Long microgridId) {
         return null;
     }
+    
 
     @Override
     public Alert updateAlert(Long id, Alert alert) {

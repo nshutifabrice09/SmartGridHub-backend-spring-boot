@@ -7,7 +7,7 @@ import java.util.List;
 public interface AlertService {
     List<Alert> getAllAlerts();
     Alert getAlertById(Long id);
-    Alert saveAlert(Alert alert);
+    Alert saveAlert(Alert alert, Long microgridId);
     Alert updateAlert(Long id, Alert alert);
     void removeAlertById(Long id);
 }
