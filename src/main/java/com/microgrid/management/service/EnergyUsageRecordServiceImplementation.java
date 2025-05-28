@@ -19,9 +19,10 @@ public class EnergyUsageRecordServiceImplementation implements EnergyUsageRecord
     }
 
     @Override
-    public EnergyUsageRecord saveEnergyUsageRecord(EnergyUsageRecord energyUsageRecord) {
+    public EnergyUsageRecord saveEnergyUsageRecord(EnergyUsageRecord energyUsageRecord, Long userId) {
         return null;
     }
+
 
     @Override
     public EnergyUsageRecord updateEnergyUsageRecord(Long id, EnergyUsageRecord energyUsageRecord) {
