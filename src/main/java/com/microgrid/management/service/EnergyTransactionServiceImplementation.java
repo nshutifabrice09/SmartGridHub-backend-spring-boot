@@ -18,9 +18,10 @@ public class EnergyTransactionServiceImplementation implements EnergyTransaction
     }
 
     @Override
-    public EnergyTransaction saveEnergyTransaction(EnergyTransaction energyTransaction) {
+    public EnergyTransaction saveEnergyTransaction(EnergyTransaction energyTransaction, Long userId, Long receiverId) {
         return null;
     }
+
 
     @Override
     public EnergyTransaction updateEnergyTransaction(Long id, EnergyTransaction energyTransaction) {
