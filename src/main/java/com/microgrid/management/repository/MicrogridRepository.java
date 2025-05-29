@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface MicrogridRepository extends JpaRepository <Microgrid, Long> {
+    Microgrid findMicrogridById(Long id);
 }
