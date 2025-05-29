@@ -1,5 +1,6 @@
 package com.microgrid.management.service;
 
+import com.microgrid.management.model.Microgrid;
 import com.microgrid.management.model.User;
 import com.microgrid.management.repository.MicrogridRepository;
 import com.microgrid.management.repository.UserRepository;
@@ -31,6 +32,8 @@ public class UserServiceImplementation implements UserService{
 
     @Override
     public User saveUser(User user, Long microgridId) {
+        Microgrid microgrid = microgridRepository.findMicrogridById(microgridId);
+        user.setMicrogrid(microgrid);
         return userRepository.save(user);
     }
 
