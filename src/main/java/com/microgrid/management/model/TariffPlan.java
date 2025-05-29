@@ -22,7 +22,6 @@ public class TariffPlan {
     @ManyToOne
     @JoinColumn(name = "microgrid_id")
     private Microgrid microgrid;
-
     public Long getId() {
         return id;
     }

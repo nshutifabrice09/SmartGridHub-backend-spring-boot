@@ -7,7 +7,7 @@ import java.util.List;
 public interface TariffPlanService {
     List<TariffPlan> getAllTariffPlans();
     TariffPlan getTariffPlanById(Long id);
-    TariffPlan saveTariffPlan(TariffPlan tariffPlan);
+    TariffPlan saveTariffPlan(TariffPlan tariffPlan, Long microgridId);
     TariffPlan updateTariffPlan(Long id, TariffPlan tariffPlan);
     void removeTariffPlanById(Long id);
 
