@@ -1,12 +1,25 @@
 package com.microgrid.management.service;
 
 import com.microgrid.management.model.EnergyTransaction;
+import com.microgrid.management.repository.EnergyTransactionRepository;
+import com.microgrid.management.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class EnergyTransactionServiceImplementation implements EnergyTransactionService{
+    private final EnergyTransactionRepository energyTransactionRepository;
+    private final UserRepository userRepository;
+
+    @Autowired
+    public EnergyTransactionServiceImplementation(EnergyTransactionRepository energyTransactionRepository, UserRepository userRepository) {
+        this.energyTransactionRepository = energyTransactionRepository;
+        this.userRepository = userRepository;
+    }
+
+    private final
     @Override
     public List<EnergyTransaction> getAllEnergyTransactions() {
         return null;
