@@ -18,8 +18,6 @@ public class EnergyTransactionServiceImplementation implements EnergyTransaction
         this.energyTransactionRepository = energyTransactionRepository;
         this.userRepository = userRepository;
     }
-
-    private final
     @Override
     public List<EnergyTransaction> getAllEnergyTransactions() {
         return null;
