@@ -1,12 +1,27 @@
 package com.microgrid.management.service;
 
 import com.microgrid.management.model.MaintenanceRequest;
+import com.microgrid.management.repository.EnergyAssetRepository;
+import com.microgrid.management.repository.MaintenanceRequestRepository;
+import com.microgrid.management.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class MaintenanceRequestServiceImplementation implements MaintenanceRequestService{
+    private final MaintenanceRequestRepository maintenanceRequestRepository;
+    private final EnergyAssetRepository energyAssetRepository;
+    private final UserRepository userRepository;
+
+    @Autowired
+    public MaintenanceRequestServiceImplementation(MaintenanceRequestRepository maintenanceRequestRepository, EnergyAssetRepository energyAssetRepository, UserRepository userRepository) {
+        this.maintenanceRequestRepository = maintenanceRequestRepository;
+        this.energyAssetRepository = energyAssetRepository;
+        this.userRepository = userRepository;
+    }
+
     @Override
     public List<MaintenanceRequest> getAllMaintenanceRequests() {
         return null;
