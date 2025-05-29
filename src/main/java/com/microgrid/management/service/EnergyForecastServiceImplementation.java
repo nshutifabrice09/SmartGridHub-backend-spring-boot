@@ -1,12 +1,25 @@
 package com.microgrid.management.service;
 
 import com.microgrid.management.model.EnergyForecast;
+import com.microgrid.management.repository.EnergyForecastRepository;
+import com.microgrid.management.repository.MicrogridRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class EnergyForecastServiceImplementation implements EnergyForecastService {
+
+    private EnergyForecastRepository energyForecastRepository;
+    private MicrogridRepository microgridRepository;
+
+    @Autowired
+    public EnergyForecastServiceImplementation(EnergyForecastRepository energyForecastRepository, MicrogridRepository microgridRepository) {
+        this.energyForecastRepository = energyForecastRepository;
+        this.microgridRepository = microgridRepository;
+    }
+
     @Override
     public List<EnergyForecast> getAllEnergyForecasts() {
         return null;
