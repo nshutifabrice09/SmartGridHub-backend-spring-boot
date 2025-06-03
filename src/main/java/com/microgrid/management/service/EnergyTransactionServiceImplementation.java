@@ -20,12 +20,12 @@ public class EnergyTransactionServiceImplementation implements EnergyTransaction
     }
     @Override
     public List<EnergyTransaction> getAllEnergyTransactions() {
-        return null;
+        return energyTransactionRepository.findAll();
     }
 
     @Override
     public EnergyTransaction getEnergyTransactionById(Long id) {
-        return null;
+        return energyTransactionRepository.findByTransactionById(id);
     }
 
     @Override
