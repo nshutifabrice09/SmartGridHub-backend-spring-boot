@@ -45,6 +45,13 @@ public class EnergyAssetServiceImplementation implements EnergyAssetService{
 
     @Override
     public EnergyAsset updateEnergyAsset(Long id, EnergyAsset energyAsset) {
+        EnergyAsset existEnergyAsset = energyAssetRepository.findEnergyAssetById(id);
+        if(existEnergyAsset != null){
+            existEnergyAsset.setType(energyAsset.getType());
+            existEnergyAsset.setCapacity(energyAsset.getCapacity());
+            existEnergyAsset.setCurrentOutput(energyAsset.getCurrentOutput());
+            return energyAssetRepository.save(existEnergyAsset);
+        }
         return null;
     }
 
