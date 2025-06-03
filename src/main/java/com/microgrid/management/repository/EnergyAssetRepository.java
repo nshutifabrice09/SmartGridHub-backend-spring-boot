@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EnergyAssetRepository extends JpaRepository <EnergyAsset, Long> {
+    EnergyAsset findEnergyAssetById(Long id);
 }

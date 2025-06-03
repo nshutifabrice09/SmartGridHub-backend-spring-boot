@@ -24,12 +24,12 @@ public class EnergyAssetServiceImplementation implements EnergyAssetService{
 
     @Override
     public List<EnergyAsset> getAllEnergyAssets() {
-        return null;
+        return energyAssetRepository.findAll();
     }
 
     @Override
     public EnergyAsset getEnergyAsset(Long id) {
-        return null;
+        return energyAssetRepository.findEnergyAssetById(id);
     }
 
     @Override
