@@ -21,12 +21,12 @@ public class BillingRecordServiceImplementation implements BillingRecordService{
 
     @Override
     public List<BillingRecord> getAllBillingRecords() {
-        return null;
+        return billingRecordRepository.findAll();
     }
 
     @Override
     public BillingRecord getBillingRecordById(Long id) {
-        return null;
+        return billingRecordRepository.findBillingRecordById(id);
     }
 
     @Override

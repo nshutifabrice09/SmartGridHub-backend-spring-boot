@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface BillingRecordRepository extends JpaRepository <BillingRecord, Long> {
+    BillingRecord findBillingRecordById(Long id);
 }
