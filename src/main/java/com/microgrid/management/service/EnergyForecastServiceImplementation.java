@@ -1,6 +1,7 @@
 package com.microgrid.management.service;
 
 import com.microgrid.management.model.EnergyForecast;
+import com.microgrid.management.model.Microgrid;
 import com.microgrid.management.repository.EnergyForecastRepository;
 import com.microgrid.management.repository.MicrogridRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,17 +23,19 @@ public class EnergyForecastServiceImplementation implements EnergyForecastServic
 
     @Override
     public List<EnergyForecast> getAllEnergyForecasts() {
-        return null;
+        return energyForecastRepository.findAll();
     }
 
     @Override
     public EnergyForecast getEnergyForecastById(Long id) {
-        return null;
+        return energyForecastRepository.findEnergyForecastById(id);
     }
 
     @Override
     public EnergyForecast saveEnergyForecast(EnergyForecast energyForecast, Long microgridId) {
-        return null;
+        Microgrid microgrid = microgridRepository.findMicrogridById(microgridId);
+        energyForecast.setMicrogrid(microgrid);
+        return energyForecastRepository.save(energyForecast);
     }
 
     @Override
