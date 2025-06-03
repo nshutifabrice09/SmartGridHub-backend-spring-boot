@@ -40,11 +40,18 @@ public class EnergyForecastServiceImplementation implements EnergyForecastServic
 
     @Override
     public EnergyForecast updateEnergyForecast(EnergyForecast energyForecast, Long id) {
+        EnergyForecast existEnergyForecast = energyForecastRepository.findEnergyForecastById(id);
+        if(existEnergyForecast != null){
+            existEnergyForecast.setDate(energyForecast.getDate());
+            existEnergyForecast.setExpectedProduction(energyForecast.getExpectedProduction());
+            existEnergyForecast.setExpectedConsumption(energyForecast.getExpectedConsumption());
+            return energyForecastRepository.save(existEnergyForecast);
+        }
         return null;
     }
 
     @Override
     public void removeEnergyForecast(Long id) {
-
+        energyForecastRepository.deleteById(id);
     }
 }
