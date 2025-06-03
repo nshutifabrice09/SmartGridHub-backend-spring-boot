@@ -1,6 +1,7 @@
 package com.microgrid.management.service;
 
 import com.microgrid.management.model.BillingRecord;
+import com.microgrid.management.model.User;
 import com.microgrid.management.repository.BillingRecordRepository;
 import com.microgrid.management.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,16 +32,25 @@ public class BillingRecordServiceImplementation implements BillingRecordService{
 
     @Override
     public BillingRecord saveBillingRecord(BillingRecord billingRecord, Long userId) {
-        return null;
+        User user = userRepository.findUserById(userId);
+        billingRecord.setUser(user);
+        return billingRecordRepository.save(billingRecord);
     }
 
     @Override
     public BillingRecord updateBillingRecord(Long id, BillingRecord billingRecord) {
+        BillingRecord existBillingRecord = billingRecordRepository.findBillingRecordById(id);
+        if(existBillingRecord != null){
+            existBillingRecord.setBillingDate(billingRecord.getBillingDate());
+            existBillingRecord.setTotalKwhUsed(billingRecord.getTotalKwhUsed());
+            existBillingRecord.setAmountDue(billingRecord.getAmountDue());
+            return billingRecordRepository.save(existBillingRecord);
+        }
         return null;
     }
 
     @Override
     public void removeBillingRecordById(Long id) {
-
+        billingRecordRepository.deleteById(id);
     }
 }
