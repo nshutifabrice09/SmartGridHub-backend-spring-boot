@@ -18,6 +18,10 @@ public class BillingRecordController {
         this.billingRecordService = billingRecordService;
     }
 
+    @PostMapping("/billingRecord/{userId}")
+    private BillingRecord save(@RequestBody BillingRecord billingRecord, @PathVariable ("userId") Long userId){
+        return billingRecordService.saveBillingRecord(billingRecord, userId);
+    }
     @GetMapping("/billingRecords")
     public List<BillingRecord> billingRecordList(){
         return billingRecordService.getAllBillingRecords();

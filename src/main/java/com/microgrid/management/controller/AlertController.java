@@ -18,6 +18,10 @@ public class AlertController {
         this.alertService = alertService;
     }
 
+    @PostMapping("/alert/{microgridId}")
+    public Alert saveAlert(@RequestBody Alert alert, @PathVariable ("microgridId") Long microgridId){
+        return alertService.saveAlert(alert, microgridId);
+    }
     @GetMapping("/alerts")
     public List<Alert> alertList(){
         return alertService.getAllAlerts();
