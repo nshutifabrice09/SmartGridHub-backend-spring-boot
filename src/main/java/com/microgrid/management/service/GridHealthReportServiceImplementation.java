@@ -21,12 +21,12 @@ public class GridHealthReportServiceImplementation implements GridHealthReportSe
 
     @Override
     public List<GridHealthReport> getAllGridHealthReports() {
-        return null;
+        return gridHealthReportRepository.findAll();
     }
 
     @Override
     public GridHealthReport getGridHealthReportById(Long id) {
-        return null;
+        return gridHealthReportRepository.findGridHealthReportById(id);
     }
 
     @Override

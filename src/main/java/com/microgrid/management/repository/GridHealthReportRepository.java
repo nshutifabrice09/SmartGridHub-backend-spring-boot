@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface GridHealthReportRepository extends JpaRepository <GridHealthReport, Long> {
+    GridHealthReport findGridHealthReportById(Long id);
 }
