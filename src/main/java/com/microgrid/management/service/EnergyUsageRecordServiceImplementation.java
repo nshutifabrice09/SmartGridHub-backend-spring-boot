@@ -1,6 +1,7 @@
 package com.microgrid.management.service;
 
 import com.microgrid.management.model.EnergyUsageRecord;
+import com.microgrid.management.model.User;
 import com.microgrid.management.repository.EnergyUsageRecordRepository;
 import com.microgrid.management.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,17 +33,26 @@ public class EnergyUsageRecordServiceImplementation implements EnergyUsageRecord
 
     @Override
     public EnergyUsageRecord saveEnergyUsageRecord(EnergyUsageRecord energyUsageRecord, Long userId) {
-        return null;
+        User user = userRepository.findUserById(userId);
+        energyUsageRecord.setUser(user);
+        return energyUsageRecordRepository.save(energyUsageRecord);
     }
 
 
     @Override
     public EnergyUsageRecord updateEnergyUsageRecord(Long id, EnergyUsageRecord energyUsageRecord) {
+        EnergyUsageRecord existEnergyUsageRecord = energyUsageRecordRepository.findEnergyUsageRecordById(id);
+        if(existEnergyUsageRecord != null){
+            existEnergyUsageRecord.setTimestamp(energyUsageRecord.getTimestamp());
+            existEnergyUsageRecord.setConsumption(energyUsageRecord.getConsumption());
+            existEnergyUsageRecord.setProduction(energyUsageRecord.getProduction());
+            return energyUsageRecordRepository.save(existEnergyUsageRecord);
+        }
         return null;
     }
 
     @Override
     public void removeEnergyUsageRecordById(Long id) {
-
+        energyUsageRecordRepository.deleteById(id);
     }
 }
