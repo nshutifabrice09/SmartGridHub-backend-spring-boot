@@ -17,6 +17,13 @@ public class EnergyAssetController {
     public EnergyAssetController(EnergyAssetService energyAssetService){
         this.energyAssetService=energyAssetService;
     }
+
+    @PostMapping("/energyAsset/{microgridId}/{userId}")
+    public EnergyAsset save(@RequestBody EnergyAsset energyAsset,
+                            @PathVariable ("microgridId") Long microgridId, @PathVariable ("userId") Long userId){
+        return energyAssetService.saveEnergyAsset(energyAsset, microgridId, userId);
+    }
+
     @GetMapping("/energyAssets")
     public List<EnergyAsset> energyAssetList(){
         return energyAssetService.getAllEnergyAssets();
@@ -25,8 +32,6 @@ public class EnergyAssetController {
     public EnergyAsset getEnergyAsset(@PathVariable ("id") Long id){
         return energyAssetService.getEnergyAsset(id);
     }
-
-
 
     @PutMapping("/update/energyAsset/{id}")
     public EnergyAsset updateEnergyAsset(@PathVariable ("id") Long id, @RequestBody EnergyAsset energyAsset){
