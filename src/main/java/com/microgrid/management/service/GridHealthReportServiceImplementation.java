@@ -39,6 +39,14 @@ public class GridHealthReportServiceImplementation implements GridHealthReportSe
 
     @Override
     public GridHealthReport updateGridHealthReport(Long id, GridHealthReport gridHealthReport) {
+        GridHealthReport existGridHealthReport = gridHealthReportRepository.findGridHealthReportById(id);
+        if(existGridHealthReport !=null){
+            existGridHealthReport.setGeneratedAt(gridHealthReport.getGeneratedAt());
+            existGridHealthReport.setTotalConsumption(gridHealthReport.getTotalConsumption());
+            existGridHealthReport.setTotalConsumption(gridHealthReport.getTotalConsumption());
+            existGridHealthReport.setLossPercentage(gridHealthReport.getLossPercentage())
+            return gridHealthReportRepository.save(existGridHealthReport);
+        }
         return null;
     }
 
