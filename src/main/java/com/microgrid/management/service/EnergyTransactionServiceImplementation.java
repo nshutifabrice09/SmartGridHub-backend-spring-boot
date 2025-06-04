@@ -1,6 +1,7 @@
 package com.microgrid.management.service;
 
 import com.microgrid.management.model.EnergyTransaction;
+import com.microgrid.management.model.User;
 import com.microgrid.management.repository.EnergyTransactionRepository;
 import com.microgrid.management.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +31,11 @@ public class EnergyTransactionServiceImplementation implements EnergyTransaction
 
     @Override
     public EnergyTransaction saveEnergyTransaction(EnergyTransaction energyTransaction, Long userId, Long receiverId) {
-        return null;
+        User user = userRepository.findUserById(userId);
+        User user1 = userRepository.findUserById(receiverId);
+        energyTransaction.setSender(user);
+        energyTransaction.setReceiver(user1);
+        return energyTransactionRepository.save(energyTransaction);
     }
 
 
@@ -41,6 +46,6 @@ public class EnergyTransactionServiceImplementation implements EnergyTransaction
 
     @Override
     public void removeEnergyTransactionById(Long id) {
-
+        energyTransactionRepository.deleteById(id);
     }
 }
