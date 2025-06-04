@@ -24,12 +24,12 @@ public class MaintenanceRequestServiceImplementation implements MaintenanceReque
 
     @Override
     public List<MaintenanceRequest> getAllMaintenanceRequests() {
-        return null;
+        return maintenanceRequestRepository.findAll();
     }
 
     @Override
     public MaintenanceRequest getMaintenanceRequestById(Long id) {
-        return null;
+        return maintenanceRequestRepository.findMaintenanceRequestById(id);
     }
 
     @Override

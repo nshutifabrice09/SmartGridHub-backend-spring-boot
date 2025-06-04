@@ -44,7 +44,7 @@ public class GridHealthReportServiceImplementation implements GridHealthReportSe
             existGridHealthReport.setGeneratedAt(gridHealthReport.getGeneratedAt());
             existGridHealthReport.setTotalConsumption(gridHealthReport.getTotalConsumption());
             existGridHealthReport.setTotalConsumption(gridHealthReport.getTotalConsumption());
-            existGridHealthReport.setLossPercentage(gridHealthReport.getLossPercentage())
+            existGridHealthReport.setLossPercentage(gridHealthReport.getLossPercentage());
             return gridHealthReportRepository.save(existGridHealthReport);
         }
         return null;
