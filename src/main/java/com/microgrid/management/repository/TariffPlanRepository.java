@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TariffPlanRepository extends JpaRepository <TariffPlan, Long> {
+    TariffPlan findTariffPlanById(Long id);
 }

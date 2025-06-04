@@ -1,5 +1,6 @@
 package com.microgrid.management.service;
 
+import com.microgrid.management.model.Microgrid;
 import com.microgrid.management.model.OptimizationLog;
 import com.microgrid.management.repository.MicrogridRepository;
 import com.microgrid.management.repository.OptimizationLogRepository;
@@ -31,16 +32,24 @@ public class OptimizationLogServiceImplementation implements OptimizationLogServ
 
     @Override
     public OptimizationLog saveOptimizationLog(OptimizationLog optimizationLog, Long microgridId) {
-        return null;
+        Microgrid microgrid = microgridRepository.findMicrogridById(microgridId);
+        optimizationLog.setMicrogrid(microgrid);
+        return optimizationLogRepository.save(optimizationLog);
     }
 
     @Override
     public OptimizationLog updateOptimizationLog(OptimizationLog optimizationLog, Long id) {
+        OptimizationLog existOptimizationLog = optimizationLogRepository.findOptimizationLogById(id);
+        if(existOptimizationLog != null){
+            existOptimizationLog.setRecommendation(optimizationLog.getRecommendation());
+            existOptimizationLog.setTimestamp(optimizationLog.getTimestamp());
+            return optimizationLogRepository.save(existOptimizationLog);
+        }
         return null;
     }
 
     @Override
     public void removeOptimizationLog(Long id) {
-
+        optimizationLogRepository.deleteById(id);
     }
 }
