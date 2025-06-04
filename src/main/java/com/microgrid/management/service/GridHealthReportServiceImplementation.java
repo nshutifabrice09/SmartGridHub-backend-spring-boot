@@ -1,6 +1,7 @@
 package com.microgrid.management.service;
 
 import com.microgrid.management.model.GridHealthReport;
+import com.microgrid.management.model.Microgrid;
 import com.microgrid.management.repository.GridHealthReportRepository;
 import com.microgrid.management.repository.MicrogridRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,9 @@ public class GridHealthReportServiceImplementation implements GridHealthReportSe
 
     @Override
     public GridHealthReport saveGridHealthReport(GridHealthReport gridHealthReport, Long microgridId) {
-        return null;
+        Microgrid microgrid = microgridRepository.findMicrogridById(microgridId);
+        gridHealthReport.setMicrogrid(microgrid);
+        return gridHealthReportRepository.save(gridHealthReport);
     }
 
     @Override
@@ -41,6 +44,6 @@ public class GridHealthReportServiceImplementation implements GridHealthReportSe
 
     @Override
     public void removeById(Long id) {
-
+        gridHealthReportRepository.deleteById(id);
     }
 }
