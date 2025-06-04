@@ -6,5 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EnergyTransactionRepository extends JpaRepository <EnergyTransaction, Long> {
-    EnergyTransaction findByTransactionById(Long id);
+
+    EnergyTransaction findByEnergyTransactionById(Long id);
 }

@@ -26,7 +26,7 @@ public class EnergyTransactionServiceImplementation implements EnergyTransaction
 
     @Override
     public EnergyTransaction getEnergyTransactionById(Long id) {
-        return energyTransactionRepository.findByTransactionById(id);
+        return energyTransactionRepository.findByEnergyTransactionById(id);
     }
 
     @Override
@@ -41,6 +41,13 @@ public class EnergyTransactionServiceImplementation implements EnergyTransaction
 
     @Override
     public EnergyTransaction updateEnergyTransaction(Long id, EnergyTransaction energyTransaction) {
+        EnergyTransaction existEnergyTransaction = energyTransactionRepository.findByEnergyTransactionById(id);
+        if(existEnergyTransaction != null){
+            existEnergyTransaction.setAmount(energyTransaction.getAmount());
+            existEnergyTransaction.setPricePerKwh(energyTransaction.getPricePerKwh());
+            existEnergyTransaction.setTimestamp(energyTransaction.getTimestamp());
+            return energyTransactionRepository.save(existEnergyTransaction);
+        }
         return null;
     }
 

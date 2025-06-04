@@ -22,12 +22,12 @@ public class EnergyUsageRecordServiceImplementation implements EnergyUsageRecord
 
     @Override
     public List<EnergyUsageRecord> getAllEnergyUsageRecords() {
-        return null;
+        return energyUsageRecordRepository.findAll();
     }
 
     @Override
     public EnergyUsageRecord getEnergyUsageRecordById(Long id) {
-        return null;
+        return energyUsageRecordRepository.findEnergyUsageRecordById(id);
     }
 
     @Override
