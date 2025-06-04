@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface OptimizationLogRepository extends JpaRepository <OptimizationLog, Long> {
+    OptimizationLog findOptimizationLogById(Long id);
 }

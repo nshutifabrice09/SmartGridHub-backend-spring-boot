@@ -21,12 +21,12 @@ public class OptimizationLogServiceImplementation implements OptimizationLogServ
 
     @Override
     public List<OptimizationLog> getAllOptimizationLogs() {
-        return null;
+        return optimizationLogRepository.findAll();
     }
 
     @Override
     public OptimizationLog getOptimizationLogById(Long id) {
-        return null;
+        return optimizationLogRepository.findOptimizationLogById(id);
     }
 
     @Override
