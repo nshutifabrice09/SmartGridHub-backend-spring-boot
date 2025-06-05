@@ -28,7 +28,10 @@ public class TariffPlanController {
         return tariffPlanService.getTariffPlanById(id);
     }
 
-
+    @PostMapping("/tariffPlan/{microgridId}")
+    public TariffPlan save(@RequestBody TariffPlan tariffPlan, @PathVariable ("microgridId") Long microgridId){
+        return tariffPlanService.saveTariffPlan(tariffPlan, microgridId);
+    }
 
     @PutMapping("/update/tariffPlan/{id}")
     public TariffPlan updateTariffPlan(@PathVariable ("id") Long id, @RequestBody TariffPlan tariffPlan){
