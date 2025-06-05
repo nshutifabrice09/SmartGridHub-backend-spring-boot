@@ -31,5 +31,9 @@ public class OptimizationLogController {
     public OptimizationLog getOptimizationLog(@PathVariable ("id") Long id){
         return optimizationLogService.getOptimizationLogById(id);
     }
-    
+
+    @PutMapping("/update/optimizationLog/{id}")
+    public OptimizationLog update(@RequestBody OptimizationLog optimizationLog, @PathVariable ("id")Long id){
+        return optimizationLogService.updateOptimizationLog(optimizationLog, id);
+    }
 }
