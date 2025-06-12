@@ -36,4 +36,9 @@ public class OptimizationLogController {
     public OptimizationLog update(@RequestBody OptimizationLog optimizationLog, @PathVariable ("id")Long id){
         return optimizationLogService.updateOptimizationLog(optimizationLog, id);
     }
+
+    @DeleteMapping("/delete/optimizationLog/{id}")
+    public void remove(@PathVariable ("id") Long id){
+        optimizationLogService.removeOptimizationLog(id);
+    }
 }
